@@ -1,14 +1,9 @@
-
 import React, { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from './src/reducers';
+import LibraryList from './src/components/common/LibrayList.js';
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -16,29 +11,15 @@ export default class App extends Component<Props> {
     return (
       <Provider store={createStore(reducers)}>
         <View style={styles.container}>
-
+          <LibraryList />
         </View>
       </Provider>
-
     );
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    flex: 1
+  }
 });
